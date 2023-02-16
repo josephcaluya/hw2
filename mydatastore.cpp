@@ -100,6 +100,10 @@ void MyDataStore::buyCart(std::string& username) {
 			userCart.erase(userCart.begin()+i);
 		}
 	}
+	map<User*, std::vector<Product*>>::iterator ite = usersAndCarts.find(currUser);
+	if (ite != usersAndCarts.end()) {
+		ite->second = userCart;
+	}
 
 }
 
